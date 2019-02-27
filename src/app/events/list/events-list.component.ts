@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventComponent } from '../event/event.component';
 import { EventService } from '../shared/event.service'
-
+declare let toastr;
 
 @Component({
     selector: 'events-list-component',
@@ -9,7 +9,7 @@ import { EventService } from '../shared/event.service'
     styleUrls: ['./events-list.component.css']
 })
 
-export class EventsListComponent {
+export class EventsListComponent implements OnInit{
     // events = allEvents;
     // EventSer
     private eventService;
@@ -18,8 +18,8 @@ export class EventsListComponent {
         this.eventService = eventService;
     }
 
-    // str = "DISPLAY";
-    // event = new EventComponent(this.e.name, this.e.date, this.e.time, this.e.address);
+    ngOnInit() {
+        this.events = this.eventService.getEvents();
+    }
 
 }
-// constructor(name: any, date: String, time: String, address:String, city: String, state: String, country: String) {

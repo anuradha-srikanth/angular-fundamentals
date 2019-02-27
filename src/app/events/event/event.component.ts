@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
+declare let toastr;
 
 @Component({
     selector: 'event-component',
     templateUrl: './event.component.html',
     styleUrls: ['./event.component.css']
 })
-
 
 export class EventComponent {
 
@@ -31,6 +31,11 @@ export class EventComponent {
         } else {
             return 'text-primary';
         }
+    }
+
+    handleClickEvent(): void {
+        console.log(this.event.name);
+        toastr.success(this.event.name);
     }
 
 }
