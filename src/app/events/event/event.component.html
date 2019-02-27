@@ -15,13 +15,43 @@
     <p> {{event.address}} </p>
 </div> -->
 
+<!-- 
+
+time: '10:00 am',
+      price: 599.99,
+      imageUrl: '/assets/images/angularconnect-shield.png',
+      location: {
+        address: '1057 DT',
+        city: 'London',
+        country: 'England'
+      },  -->
+
 <div class="col-sm">
 <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{event.name}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{event.date}} </h6>
-          <p class="card-text">{{event.address}}</p>
-          <p class="card-text">Click the button for more details on this event</p>
+          <span>
+            <div [ngSwitch]="event?.time">
+              <p> Time: {{event?.time}}
+              <span *ngSwitchCase="'8:00 am'">(Early Event)</span>
+              <span *ngSwitchCase="'10:00 am'">(Late Event)</span>
+              <span *ngSwitchDefault>(Standard Event) </span>
+            </p>
+            </div>
+
+
+          <p class="card-text">
+            Price: {{event.price}} <br/>
+          </p>
+          <div *ngIf="event.location">
+            Location: {{event.location.address}}, {{event.location.city}}, {{event.location.country}}
+          </div>
+          <div *ngIf="event.link">
+            Online Event Link: {{ event.link }}
+          </div>
+            <p class="small card-text">Click the button for more details on this event</p>
+          </span>
           <a href="#" class="card-link">Attend</a>
           <a href="#" class="card-link">More information</a>
         </div>

@@ -1,31 +1,10 @@
 <div>
 
     <h1> Events List </h1>
-    <!-- <ul> 
-        <li> Name: {{ event.name }} </li>
-        <li> Date: {{ event.date }} </li>
-        <li></li>
-    </ul> -->
-
-    <!-- {{ event.name }} -->
-
-    <!-- <event-component [eventDetail]="str"> </event-component> -->
-    <!-- <table> 
-        <tr> 
-            <th> Name </th>
-            <th> Date </th>
-            <th> Time </th>
-            <th> Address </th>    
-        </tr> -->
-
-
-        <div class="container">
-                <div class="row">
-
-                            
-    <event-component *ngFor="let e of events" [event] = "e" > </event-component>
-   <!-- </div> -->
+    <div class="container">
+        <div class="row">                    
+            <event-component *ngFor="let e of events" [event] = "e" > </event-component>
+        </div>
+        <!-- <div class="row"> </div> -->
    </div>
-   </div>
-    <!-- </table> -->
 </div>

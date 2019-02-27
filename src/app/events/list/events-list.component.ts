@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EventComponent } from '../event/event.component';
-
+import { allEvents } from "./allEvents.js"
 
 
 @Component({
@@ -10,26 +10,7 @@ import { EventComponent } from '../event/event.component';
 })
 
 export class EventsListComponent {
-    events = [
-        {
-        name:'ngConf 2025',
-        date: '3/1/2025', 
-        time: '8am', 
-        address: '123 Main St'
-        },
-        {
-            name:'ngConf 2025',
-            date: '3/1/2025', 
-            time: '8am', 
-            address: '123 Main St'
-        },
-        {
-            name:'ngConf 2025',
-            date: '3/1/2025', 
-            time: '8am', 
-            address: '123 Main St'
-        }
-]
+    events = allEvents;
 
     // str = "DISPLAY";
     // event = new EventComponent(this.e.name, this.e.date, this.e.time, this.e.address);
