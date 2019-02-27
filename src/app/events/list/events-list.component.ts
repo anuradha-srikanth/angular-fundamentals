@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EventComponent } from '../event/event.component';
-import { allEvents } from "./allEvents.js"
+import { EventService } from '../shared/event.service'
 
 
 @Component({
@@ -10,7 +10,13 @@ import { allEvents } from "./allEvents.js"
 })
 
 export class EventsListComponent {
-    events = allEvents;
+    // events = allEvents;
+    // EventSer
+    private eventService;
+    private events;
+    constructor(eventService: EventService){
+        this.eventService = eventService;
+    }
 
     // str = "DISPLAY";
     // event = new EventComponent(this.e.name, this.e.date, this.e.time, this.e.address);

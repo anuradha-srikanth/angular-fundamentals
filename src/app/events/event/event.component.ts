@@ -23,6 +23,16 @@ export class EventComponent {
 
     @Input() event: any;
 
+    getStartTimeClass(): string{
+        if (this.event && this.event.time == '8:00 am'){
+            return 'text-success'
+        } else if(this.event && this.event.time == "10:00 am"){
+            return 'text-warning';
+        } else {
+            return 'text-primary';
+        }
+    }
+
 }
 
 
